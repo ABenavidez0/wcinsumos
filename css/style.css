@@ -1,0 +1,78 @@
+/* Reinicio básico */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    scroll-behavior: smooth;
+    padding-top: 56px; /* Para que el contenido no quede tapado detrás de la navbar fixed-top */
+  }
+  
+  /* Hero section */
+  .hero {
+    background: #2f3f69 url("../img/hero-bg.jpg") center center/cover no-repeat; 
+    /* Si quieres usar una imagen de fondo, descomenta */
+    color: #fff;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  .hero .btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+  }
+  
+  /* About */
+  #about p {
+    line-height: 1.6;
+  }
+  
+  /* Services */
+  .services h2 {
+    font-weight: 700;
+    color: #333;
+  }
+  .services .card {
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 8px;
+  }
+  .services .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Marcas (Brands) */
+  #brands h2 {
+    font-weight: 700;
+    color: #333;
+  }
+  /* Ajustes del carousel si deseas */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(1); /* Cambia flechas a blanco */
+  }
+  
+  /* Contact */
+  #contact h2 {
+    font-weight: 700;
+    color: #333;
+  }
+  .contact-info {
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    background: #2f3f69;
+    color: #fff;
+  }
+  
