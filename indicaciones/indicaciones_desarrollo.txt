@@ -1,0 +1,14 @@
+-(imagen 1)eliminar lo que dice distribuidor oficial, poner una imagen de fonde tipo industria, nuestro logo y conservar la parte de home-productos-venta mayorista
+-(imagen 2)meter algo de este estilo con sarasa
+-(imagen 3)cambiar piscinas por minería y petróleo,cambiar bombas presurización por bodegas,cambiar riego por hoteleria,agregar uno que diga tratamiento de aguas
+-(imagen 4)cambiar el ahora 12 por cuentas corrientes
+-(imagen 5)poner nuestras marcas
+-(general)si te fijas el botón de wapp te persigue permanente y te dirige al chat de una, eso esta buenisimo
+-(imagen 6)aca deberíamos poner un menú con:
+herramientas manueles y eléctricas
+insumos químicos
+insumos para bodegas
+insumos para petroleras y mineras
+insumos hoteleria-gastronomia
+insumos eléctricos
+tratamiento de aguas

@@ -3,69 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="WC INSUMOS - Venta de insumos industriales, herramientas y soluciones informáticas. Más de 10 años de experiencia en el mercado.">
-  <meta name="keywords" content="insumos industriales, herramientas, ferretería industrial, soluciones informáticas, Mendoza">
+  <meta name="description" content="WC INSUMOS - Soluciones integrales para la industria. Insumos industriales, herramientas profesionales y servicios especializados para minería, petróleo, bodegas y hotelería.">
+  <meta name="keywords" content="insumos industriales, herramientas profesionales, minería, petróleo, bodegas, hotelería, tratamiento de aguas, insumos químicos">
   <meta name="author" content="WC INSUMOS">
-  <title>WC INSUMOS - Insumos Industriales y Soluciones Informáticas</title>
+  <title>WC INSUMOS - Soluciones Integrales para la Industria</title>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Bootstrap 5 CSS -->
   <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
     rel="stylesheet"
   />
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- Estilos personalizados (en el mismo archivo para ejemplo) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    /* Ajustes globales */
+    /* Variables CSS para consistencia */
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2d5aa0;
+      --accent-color: #f56500;
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --bg-light: #f7fafc;
+      --white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    }
+
+    /* Reset y estilos base */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #ffffff;
-      color: #2c3e50;
-      padding-top: 76px;
-      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      overflow-x: hidden;
     }
 
-    /* Navbar */
+    /* Navbar profesional */
     .navbar {
       background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       padding: 1rem 0;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #2f3f69 !important;
-    }
-    .nav-link {
-      font-weight: 500;
-      color: #2c3e50 !important;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-    }
-    .nav-link:hover {
-      color: #f56500 !important;
+      transition: all 0.3s ease;
     }
 
-    /* Hero Section */
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.8rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark) !important;
+      margin: 0 1rem;
+      padding: 0.5rem 0 !important;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+
+    /* Dropdown menu styles */
+    .dropdown-menu {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      padding: 1rem 0;
+      margin-top: 0.5rem;
+      min-width: 280px;
+    }
+
+    .dropdown-item {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      margin: 0 0.5rem;
+    }
+
+    .dropdown-item:hover {
+      background: linear-gradient(135deg, var(--accent-color), #ff7a00);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .dropdown-item i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .dropdown-toggle::after {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-toggle[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+
+    /* Hero Section Industrial */
     .hero {
-      background: linear-gradient(135deg, #2f3f69 0%, #1a2634 100%);
-      color: #fff;
-      min-height: 80vh;
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 160, 0.8) 100%),
+                  url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
       display: flex;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 120px 20px;
       position: relative;
-      overflow: hidden;
+      color: white;
     }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -73,284 +154,360 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
+                  linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
+                  linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.1) 75%), 
+                  linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.1) 75%);
       background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
       opacity: 0.1;
     }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
     .hero h1 {
       font-size: 3.5rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
+      line-height: 1.2;
     }
-    .hero p {
-      font-size: 1.2rem;
+
+    .hero .subtitle {
+      font-size: 1.3rem;
       margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      opacity: 0.9;
+      font-weight: 300;
     }
-    .btn-contact {
-      background-color: #f56500;
-      color: #fff;
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+      background: var(--accent-color);
       border: none;
       padding: 1rem 2.5rem;
       font-weight: 600;
       border-radius: 50px;
       transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-    .btn-contact:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(245, 101, 0, 0.3);
-      color: #fff;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    /* About Section */
-    #about {
-      padding: 100px 20px;
-      background: #f8f9fa;
-    }
-    #about h2 {
-      margin-bottom: 2rem;
-      font-weight: 700;
-      color: #2f3f69;
-      position: relative;
-      display: inline-block;
-    }
-    #about h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #f56500;
-    }
-    #about p {
-      margin: 0 auto;
-      max-width: 800px;
-      line-height: 1.8;
-      font-size: 1.1rem;
-      color: #666;
+    .btn-primary-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(245, 101, 0, 0.4);
+      color: white;
     }
 
-    /* Services Section */
-    #services {
-      padding: 100px 20px;
-    }
-    #services h2 {
-      font-weight: 700;
-      color: #2f3f69;
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-    }
-    #services h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #f56500;
-    }
-    .services .card {
+    .btn-secondary-custom {
+      background: transparent;
+      border: 2px solid white;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      border-radius: 50px;
       transition: all 0.3s ease;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      background: #fff;
-    }
-    .services .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    .services .card img {
-      max-height: 120px;
-      object-fit: contain;
-      padding: 1.5rem;
-    }
-    .services .card h4 {
-      color: #2f3f69;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .services .card p {
-      color: #666;
-      margin-bottom: 0;
+      color: white;
+      text-decoration: none;
     }
 
-    /* Brands Section */
-    #brands {
-      padding: 100px 20px;
-      background: #f8f9fa;
-    }
-    #brands h2 {
-      font-weight: 700;
-      color: #2f3f69;
-      text-align: center;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-    #brands h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #f56500;
-    }
-    #brands p {
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #666;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      filter: invert(1);
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      padding: 2rem;
+    .btn-secondary-custom:hover {
+      background: white;
+      color: var(--primary-color);
     }
 
-    /* Contact Section */
-    #contact {
-      padding: 100px 20px;
+    /* Sección About mejorada */
+    .about-section {
+      padding: 120px 0;
+      background: var(--bg-light);
     }
-    #contact h2 {
+
+    .section-title {
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #2f3f69;
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-    }
-    #contact h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #f56500;
-    }
-    .contact-info {
-      background: #f8f9fa;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-    .contact-info h3 {
-      color: #2f3f69;
-      font-weight: 600;
+      color: var(--primary-color);
       margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .section-subtitle {
       font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
     }
-    .contact-info p {
-      color: #666;
-      margin-bottom: 1.5rem;
+
+    .stats-grid {
+      margin-top: 4rem;
     }
-    .contact-info a {
-      color: #666;
-      transition: color 0.3s ease;
-    }
-    .contact-info a:hover {
-      color: #f56500;
-    }
-    form {
-      background: #fff;
-      border-radius: 15px;
+
+    .stat-item {
+      text-align: center;
       padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
-    .form-control {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 0.8rem;
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* Secciones de servicios profesionales */
+    .services-section {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      border: none;
+      height: 100%;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .service-description {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Brands section mejorada */
+    .brands-section {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+
+    .brand-logo {
+      max-height: 80px;
+      width: auto;
+      opacity: 0.7;
       transition: all 0.3s ease;
+      filter: grayscale(100%);
     }
+
+    .brand-logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* Contact section mejorada */
+    .contact-section {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .contact-info-card {
+      background: var(--gradient-primary);
+      color: white;
+      border-radius: 20px;
+      padding: 3rem;
+      height: 100%;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info-item i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      width: 40px;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-control {
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
     .form-control:focus {
-      border-color: #f56500;
+      border-color: var(--accent-color);
       box-shadow: 0 0 0 0.2rem rgba(245, 101, 0, 0.25);
     }
-    .btn-primary {
-      background: #f56500;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: #e55a00;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(245, 101, 0, 0.3);
+
+    /* Footer mejorado */
+    .footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 60px 0 30px;
     }
 
-    /* Footer */
-    footer {
-      background: #2f3f69;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
-      margin-top: 0;
+    .footer h5 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-      opacity: 0.8;
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-color);
+    }
+
+    /* WhatsApp flotante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      color: white;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .service-card {
+        margin-bottom: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#home">WC INSUMOS</a>
     <button 
       class="navbar-toggler" 
       type="button" 
       data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation"
+      data-bs-target="#navbarNav"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse text-end" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Nosotros</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productosDropdown">
+            <li><a class="dropdown-item" href="#herramientas">
+              <i class="fas fa-tools me-2"></i>Herramientas Manuales y Eléctricas
+            </a></li>
+            <li><a class="dropdown-item" href="#quimicos">
+              <i class="fas fa-flask me-2"></i>Insumos Químicos
+            </a></li>
+            <li><a class="dropdown-item" href="#bodegas">
+              <i class="fas fa-wine-bottle me-2"></i>Insumos para Bodegas
+            </a></li>
+            <li><a class="dropdown-item" href="#petroleras">
+              <i class="fas fa-oil-well me-2"></i>Insumos para Petroleras y Mineras
+            </a></li>
+            <li><a class="dropdown-item" href="#hoteleria">
+              <i class="fas fa-hotel me-2"></i>Insumos Hotelería-Gastronomía
+            </a></li>
+            <li><a class="dropdown-item" href="#electricos">
+              <i class="fas fa-bolt me-2"></i>Insumos Eléctricos
+            </a></li>
+            <li><a class="dropdown-item" href="#aguas">
+              <i class="fas fa-water me-2"></i>Tratamiento de Aguas
+            </a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#services">Servicios</a>
+          <a class="nav-link" href="#marcas">Marcas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#brands">Marcas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contacto</a>
+          <a class="nav-link" href="#contacto">Contacto</a>
         </li>
       </ul>
     </div>
@@ -359,93 +516,476 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero">
-  <div class="container">
-    <h1>Venta de insumos y Servicios Informáticos</h1>
-    <p>Somos un equipo multidisciplinario que trabajamos para brindar un servicio de calidad.</p>
-    <a href="#contact" class="btn btn-contact btn-lg">Contáctanos</a>
+  <div class="hero-content">
+    <h1>Soluciones Integrales para la Industria</h1>
+    <p class="subtitle">Más de 10 años brindando insumos industriales, herramientas profesionales y servicios especializados para los sectores más exigentes del mercado.</p>
+    <div class="hero-buttons">
+      <a href="#productos" class="btn-primary-custom">
+        <i class="fas fa-industry"></i>
+        Ver Productos
+      </a>
+      <a href="#contacto" class="btn-secondary-custom">
+        Solicitar Cotización
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- About Section -->
-<section id="about">
+<section class="about-section">
   <div class="container">
-    <h2>Sobre Nosotros</h2>
-    <p>
-      En <strong>WC INSUMOS</strong> contamos con más de 
-      <strong>10 años de experiencia</strong> en la comercialización 
-      de insumos industriales, herramientas, y soluciones informáticas. 
-      Nuestro objetivo es ofrecer productos de calidad y asesoramiento 
-      personalizado para cubrir las necesidades de nuestros clientes.
-    </p>
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">Experiencia y Confianza</h2>
+        <p class="section-subtitle">
+          En WC INSUMOS somos especialistas en brindar soluciones integrales para la industria. 
+          Trabajamos con los sectores más exigentes, garantizando calidad, confiabilidad y servicio profesional.
+        </p>
+        <p class="mb-4">
+          Nuestro equipo multidisciplinario cuenta con la experiencia necesaria para asesorarte 
+          en la selección de los mejores productos y servicios para tu empresa.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="row stats-grid">
+          <div class="col-6">
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Años de Experiencia</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Clientes Satisfechos</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Marcas Representadas</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Soporte Técnico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="services">
+<!-- Productos Section -->
+<section id="productos" class="services-section">
   <div class="container">
-    <h2>Nuestros Servicios</h2>
+    <div class="text-center mb-5">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <p class="section-subtitle">Soluciones especializadas para cada sector industrial</p>
+    </div>
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-industry fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
           </div>
-          <h4>Insumos Industriales</h4>
-          <p>Productos de alta calidad para la industria</p>
+          <h3 class="service-title">Herramientas Manuales y Eléctricas</h3>
+          <p class="service-description">Herramientas profesionales de las mejores marcas para todo tipo de trabajos industriales y comerciales.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-bolt fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-flask"></i>
           </div>
-          <h4>Materiales Eléctricos</h4>
-          <p>Todo lo que necesitas para instalaciones eléctricas</p>
+          <h3 class="service-title">Insumos Químicos</h3>
+          <p class="service-description">Productos químicos especializados para procesos industriales y tratamientos específicos.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-tools fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wine-bottle"></i>
           </div>
-          <h4>Herramientas Profesionales</h4>
-          <p>Herramientas de las mejores marcas</p>
+          <h3 class="service-title">Insumos para Bodegas</h3>
+          <p class="service-description">Equipamiento y suministros especializados para la industria vitivinícola y bodegas.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-hard-hat fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-oil-well"></i>
           </div>
-          <h4>Seguridad Industrial</h4>
-          <p>Elementos de protección personal</p>
+          <h3 class="service-title">Minería y Petróleo</h3>
+          <p class="service-description">Insumos especializados para la industria extractiva, minería y sector petrolero.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-wrench fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hotel"></i>
           </div>
-          <h4>Herramientas de Mano</h4>
-          <p>Amplia variedad de herramientas manuales</p>
+          <h3 class="service-title">Hotelería y Gastronomía</h3>
+          <p class="service-description">Equipamiento y suministros para hoteles, restaurantes y sector gastronómico.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-chart-line fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bolt"></i>
           </div>
-          <h4>Análisis de Datos</h4>
-          <p>Soluciones personalizadas para tu negocio</p>
+          <h3 class="service-title">Insumos Eléctricos</h3>
+          <p class="service-description">Materiales eléctricos, componentes y sistemas para instalaciones industriales.</p>
         </div>
       </div>
-      <div class="col-md-4 offset-md-4">
-        <div class="card p-4 text-center h-100">
-          <div class="service-icon mb-4">
-            <i class="fas fa-bullhorn fa-3x text-primary"></i>
+      <div class="col-lg-4 col-md-6 offset-lg-2">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-water"></i>
           </div>
-          <h4>Marketing Digital</h4>
-          <p>Estrategias para potenciar tu presencia online</p>
+          <h3 class="service-title">Tratamiento de Aguas</h3>
+          <p class="service-description">Sistemas y productos para tratamiento, purificación y gestión de aguas industriales.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3 class="service-title">Cuentas Corrientes</h3>
+          <p class="service-description">Facilidades de pago y financiación para empresas. Consulta por nuestros planes especiales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secciones de Categorías de Productos -->
+<section id="herramientas" class="services-section" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Herramientas Manuales y Eléctricas</h2>
+      <p class="section-subtitle">Herramientas profesionales de las mejores marcas para todo tipo de trabajos industriales</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hammer"></i>
+          </div>
+          <h4 class="service-title">Herramientas de Mano</h4>
+          <p class="service-description">Martillos, destornilladores, llaves, alicates y más.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-screwdriver"></i>
+          </div>
+          <h4 class="service-title">Herramientas Eléctricas</h4>
+          <p class="service-description">Taladros, amoladoras, sierras y equipos eléctricos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h4 class="service-title">Herramientas de Precisión</h4>
+          <p class="service-description">Instrumentos de medición y herramientas especializadas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-toolbox"></i>
+          </div>
+          <h4 class="service-title">Accesorios</h4>
+          <p class="service-description">Cajas de herramientas, organizadores y accesorios.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quimicos" class="services-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Insumos Químicos</h2>
+      <p class="section-subtitle">Productos químicos especializados para procesos industriales</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-vial"></i>
+          </div>
+          <h4 class="service-title">Reactivos Industriales</h4>
+          <p class="service-description">Productos químicos para procesos industriales específicos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-spray-can"></i>
+          </div>
+          <h4 class="service-title">Solventes y Limpieza</h4>
+          <p class="service-description">Solventes industriales y productos de limpieza especializada.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4 class="service-title">Productos de Protección</h4>
+          <p class="service-description">Anticorrosivos, inhibidores y productos de protección.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h4 class="service-title">Análisis y Control</h4>
+          <p class="service-description">Productos para análisis y control de calidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bodegas" class="services-section" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Insumos para Bodegas</h2>
+      <p class="section-subtitle">Equipamiento especializado para la industria vitivinícola</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wine-glass"></i>
+          </div>
+          <h4 class="service-title">Proceso de Fermentación</h4>
+          <p class="service-description">Equipos y productos para fermentación controlada.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-filter"></i>
+          </div>
+          <h4 class="service-title">Filtración</h4>
+          <p class="service-description">Sistemas de filtración y clarificación del vino.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-thermometer-half"></i>
+          </div>
+          <h4 class="service-title">Control de Temperatura</h4>
+          <p class="service-description">Sistemas de refrigeración y control térmico.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-box"></i>
+          </div>
+          <h4 class="service-title">Envasado</h4>
+          <p class="service-description">Equipos de embotellado y etiquetado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="petroleras" class="services-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Insumos para Petroleras y Mineras</h2>
+      <p class="section-subtitle">Equipamiento robusto para la industria extractiva</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hard-hat"></i>
+          </div>
+          <h4 class="service-title">Seguridad Industrial</h4>
+          <p class="service-description">EPP certificado para ambientes de alto riesgo.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h4 class="service-title">Maquinaria Pesada</h4>
+          <p class="service-description">Repuestos y componentes para equipos pesados.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h4 class="service-title">Resistentes a Altas T°</h4>
+          <p class="service-description">Materiales resistentes a condiciones extremas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-gas-pump"></i>
+          </div>
+          <h4 class="service-title">Manejo de Fluidos</h4>
+          <p class="service-description">Bombas, válvulas y sistemas de transporte.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hoteleria" class="services-section" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Insumos Hotelería-Gastronomía</h2>
+      <p class="section-subtitle">Equipamiento profesional para hoteles y restaurantes</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h4 class="service-title">Equipos de Cocina</h4>
+          <p class="service-description">Hornos, cocinas, freidoras y equipos profesionales.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h4 class="service-title">Refrigeración</h4>
+          <p class="service-description">Heladeras, freezers y cámaras frigoríficas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-soap"></i>
+          </div>
+          <h4 class="service-title">Limpieza</h4>
+          <p class="service-description">Productos de limpieza y desinfección profesional.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bed"></i>
+          </div>
+          <h4 class="service-title">Hotelería</h4>
+          <p class="service-description">Amenities, blanquería y equipamiento hotelero.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="electricos" class="services-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Insumos Eléctricos</h2>
+      <p class="section-subtitle">Componentes y sistemas para instalaciones industriales</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h4 class="service-title">Componentes Básicos</h4>
+          <p class="service-description">Cables, enchufes, interruptores y componentes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4 class="service-title">Iluminación Industrial</h4>
+          <p class="service-description">Luminarias LED y sistemas de iluminación.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-battery-full"></i>
+          </div>
+          <h4 class="service-title">Energía</h4>
+          <p class="service-description">Baterías, UPS y sistemas de alimentación.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4 class="service-title">Protección</h4>
+          <p class="service-description">Fusibles, disyuntores y protecciones eléctricas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aguas" class="services-section" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Tratamiento de Aguas</h2>
+      <p class="section-subtitle">Sistemas avanzados para purificación y gestión de aguas</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-filter"></i>
+          </div>
+          <h4 class="service-title">Filtración</h4>
+          <p class="service-description">Sistemas de filtros y purificación de agua.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tint"></i>
+          </div>
+          <h4 class="service-title">Osmosis Inversa</h4>
+          <p class="service-description">Equipos de osmosis para agua ultrapura.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <h4 class="service-title">Tratamiento de Residuos</h4>
+          <p class="service-description">Sistemas para tratamiento de aguas residuales.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4 class="service-title">Monitoreo</h4>
+          <p class="service-description">Sensores y equipos de control de calidad.</p>
         </div>
       </div>
     </div>
@@ -453,34 +993,27 @@
 </section>
 
 <!-- Brands Section (Marcas) con Carousel -->
-<section id="brands" class="bg-light">
+<section id="marcas" class="brands-section">
   <div class="container">
-    <h2>Nuestras Marcas</h2>
-    <p>Trabajamos con las mejores marcas del mercado para garantizar calidad y confianza.</p>
+    <h2 class="section-title">Nuestras Marcas</h2>
+    <p class="section-subtitle">Trabajamos con las mejores marcas del mercado para garantizar calidad y confianza.</p>
     <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="d-flex justify-content-around align-items-center flex-wrap">
-            <img src="img/belimo.png" class="mx-3 mb-3" alt="Marca 1" 
-                 style="max-height: 60px; object-fit: contain;">
-            <img src="img/bahco.png" class="mx-3 mb-3" alt="Marca 2" 
-                 style="max-height: 60px; object-fit: contain;">
-            <img src="img/lisal.png" class="mx-3 mb-3" alt="Marca 3" 
-                 style="max-height: 60px; object-fit: contain;">
-            <img src="img/fv.png" class="mx-3 mb-3" alt="Marca 4" 
-                 style="max-height: 60px; object-fit: contain;">
+            <img src="img/belimo.png" class="mx-3 mb-3 brand-logo" alt="Marca 1">
+            <img src="img/bahco.png" class="mx-3 mb-3 brand-logo" alt="Marca 2">
+            <img src="img/lisal.png" class="mx-3 mb-3 brand-logo" alt="Marca 3">
+            <img src="img/fv.png" class="mx-3 mb-3 brand-logo" alt="Marca 4">
           </div>
         </div>
         <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="d-flex justify-content-around align-items-center flex-wrap">
-            <img src="img/makita.png" class="mx-3 mb-3" alt="Marca 5" 
-                 style="max-height: 60px; object-fit: contain;">
-            <img src="img/ledvance.png" class="mx-3 mb-3" alt="Marca 6" 
-                 style="max-height: 60px; object-fit: contain;">
-            <img src="img/3m.png" class="mx-3 mb-3" alt="Marca 7" 
-                 style="max-height: 60px; object-fit: contain;">
+            <img src="img/makita.png" class="mx-3 mb-3 brand-logo" alt="Marca 5">
+            <img src="img/ledvance.png" class="mx-3 mb-3 brand-logo" alt="Marca 6">
+            <img src="img/3m.png" class="mx-3 mb-3 brand-logo" alt="Marca 7">
           </div>
         </div>
         <!-- Agrega más slides si lo necesitas -->
@@ -499,45 +1032,45 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact">
+<section id="contacto" class="contact-section">
   <div class="container">
-    <h2>Contacto</h2>
+    <h2 class="section-title">Contacto</h2>
     <div class="row g-5">
       <!-- Información de contacto -->
       <div class="col-md-4">
-        <div class="contact-info">
+        <div class="contact-info-card">
           <h3 class="mb-4">Información de Contacto</h3>
-          <div class="d-flex align-items-center mb-3">
-            <i class="fas fa-map-marker-alt text-primary me-3 fa-2x"></i>
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
             <div>
               <h5 class="mb-1">Dirección</h5>
               <p class="mb-0">Mendoza, Argentina</p>
             </div>
           </div>
-          <div class="d-flex align-items-center mb-3">
-            <i class="fas fa-phone text-primary me-3 fa-2x"></i>
+          <div class="contact-info-item">
+            <i class="fas fa-phone"></i>
             <div>
               <h5 class="mb-1">Teléfono</h5>
               <p class="mb-0">
-                <a href="tel:+54112223344" class="text-decoration-none text-dark">
+                <a href="tel:+54112223344" class="text-decoration-none text-white">
                   +54 2612167948
                 </a>
               </p>
             </div>
           </div>
-          <div class="d-flex align-items-center mb-3">
-            <i class="fas fa-envelope text-primary me-3 fa-2x"></i>
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
             <div>
               <h5 class="mb-1">Email</h5>
               <p class="mb-0">
-                <a href="mailto:insumos.wc@gmail.com" class="text-decoration-none text-dark">
+                <a href="mailto:insumos.wc@gmail.com" class="text-decoration-none text-white">
                   insumos.wc@gmail.com
                 </a>
               </p>
             </div>
           </div>
-          <div class="d-flex align-items-center">
-            <i class="fas fa-clock text-primary me-3 fa-2x"></i>
+          <div class="contact-info-item">
+            <i class="fas fa-clock"></i>
             <div>
               <h5 class="mb-1">Horario de Atención</h5>
               <p class="mb-0">Lunes a Viernes: 9:00 - 18:00</p>
@@ -547,74 +1080,76 @@
       </div>
       <!-- Formulario de contacto -->
       <div class="col-md-8">
-        <form class="shadow-sm p-4 rounded">
-          <div class="row g-3 mb-3">
-            <div class="col-md-6">
+        <div class="contact-form">
+          <form class="shadow-sm p-4 rounded">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="nombre"
+                    placeholder="Tu Nombre" 
+                    required
+                  >
+                  <label for="nombre">Tu Nombre</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email"
+                    placeholder="Tu Email" 
+                    required
+                  >
+                  <label for="email">Tu Email</label>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
               <div class="form-floating">
                 <input 
                   type="text" 
                   class="form-control" 
-                  id="nombre"
-                  placeholder="Tu Nombre" 
+                  id="asunto"
+                  placeholder="Asunto" 
                   required
                 >
-                <label for="nombre">Tu Nombre</label>
+                <label for="asunto">Asunto</label>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="mb-3">
               <div class="form-floating">
-                <input 
-                  type="email" 
+                <textarea 
                   class="form-control" 
-                  id="email"
-                  placeholder="Tu Email" 
+                  id="mensaje"
+                  style="height: 150px"
+                  placeholder="Mensaje" 
                   required
-                >
-                <label for="email">Tu Email</label>
+                ></textarea>
+                <label for="mensaje">Mensaje</label>
               </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <div class="form-floating">
-              <input 
-                type="text" 
-                class="form-control" 
-                id="asunto"
-                placeholder="Asunto" 
-                required
-              >
-              <label for="asunto">Asunto</label>
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="form-floating">
-              <textarea 
-                class="form-control" 
-                id="mensaje"
-                style="height: 150px"
-                placeholder="Mensaje" 
-                required
-              ></textarea>
-              <label for="mensaje">Mensaje</label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
-          </button>
-        </form>
+            <button type="submit" class="btn-primary-custom">
+              <i class="fas fa-paper-plane me-2"></i>Solicitar Cotización
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer class="footer">
   <div class="container py-5">
     <div class="row g-4">
       <div class="col-lg-4">
         <h5 class="text-white mb-4">WC INSUMOS</h5>
         <p class="text-white-50 mb-4">
-          Más de 10 años brindando soluciones de calidad en insumos industriales y servicios informáticos.
+          Más de 10 años brindando soluciones de calidad en insumos industriales y servicios especializados para los sectores más exigentes del mercado.
         </p>
         <div class="d-flex gap-3">
           <a href="#" class="text-white-50 hover-white">
@@ -638,16 +1173,16 @@
             <a href="#home" class="text-white-50 text-decoration-none hover-white">Inicio</a>
           </li>
           <li class="mb-2">
-            <a href="#about" class="text-white-50 text-decoration-none hover-white">Nosotros</a>
+            <a href="#productos" class="text-white-50 text-decoration-none hover-white">Productos</a>
           </li>
           <li class="mb-2">
-            <a href="#services" class="text-white-50 text-decoration-none hover-white">Servicios</a>
+            <a href="#servicios" class="text-white-50 text-decoration-none hover-white">Servicios</a>
           </li>
           <li class="mb-2">
-            <a href="#brands" class="text-white-50 text-decoration-none hover-white">Marcas</a>
+            <a href="#marcas" class="text-white-50 text-decoration-none hover-white">Marcas</a>
           </li>
           <li class="mb-2">
-            <a href="#contact" class="text-white-50 text-decoration-none hover-white">Contacto</a>
+            <a href="#contacto" class="text-white-50 text-decoration-none hover-white">Contacto</a>
           </li>
         </ul>
       </div>
@@ -696,9 +1231,100 @@
   </div>
 </footer>
 
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/542612167948?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20industriales" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
 <!-- Bootstrap JS -->
 <script 
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+// Smooth scrolling para enlaces del menú
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            // Cerrar dropdown si está abierto
+            const dropdown = document.querySelector('.dropdown-menu.show');
+            if (dropdown) {
+                const bootstrapDropdown = bootstrap.Dropdown.getInstance(document.querySelector('[data-bs-toggle="dropdown"]'));
+                if (bootstrapDropdown) {
+                    bootstrapDropdown.hide();
+                }
+            }
+            
+            // Scroll suave con offset para el navbar
+            const offset = 100; // Altura del navbar
+            const elementPosition = target.offsetTop;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Efecto parallax suave en el hero
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero && scrolled < hero.offsetHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Animación de las estadísticas cuando entran en viewport
+const observerOptions = {
+    threshold: 0.7,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            if (statNumber && !statNumber.classList.contains('animated')) {
+                statNumber.classList.add('animated');
+                animateNumber(statNumber);
+            }
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.stat-item').forEach(item => {
+    observer.observe(item);
+});
+
+function animateNumber(element) {
+    const target = parseInt(element.textContent);
+    const increment = target / 50;
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+    }, 40);
+}
+
+// Navbar transparency on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+    }
+});
 </script>
 </body>
 </html>
