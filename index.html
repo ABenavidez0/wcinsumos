@@ -4,572 +4,1445 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="WC INSUMOS - Soluciones integrales para la industria. Insumos industriales, herramientas profesionales y servicios especializados para minería, petróleo, bodegas y hotelería.">
-  <meta name="keywords" content="insumos industriales, herramientas profesionales, minería, petróleo, bodegas, hotelería, tratamiento de aguas, insumos químicos">
+  <meta name="keywords" content="insumos industriales, minería, petróleo, herramientas profesionales, bodegas, hotelería, tratamiento de aguas, insumos químicos, Mendoza, Argentina">
   <meta name="author" content="WC INSUMOS">
-  <title>WC INSUMOS - Soluciones Integrales para la Industria</title>
-  <!-- Favicon -->
+  <meta name="theme-color" content="#0a1f3d">
+  <title>WC INSUMOS | Soluciones Integrales para la Industria</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Bootstrap 5 CSS -->
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
-    rel="stylesheet"
-  />
-  <!-- Font Awesome -->
+  <link rel="preload" as="image" href="img2/img1.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
-    /* Variables CSS para consistencia */
     :root {
-      --primary-color: #1a365d;
-      --secondary-color: #2d5aa0;
-      --accent-color: #f56500;
-      --text-dark: #2d3748;
-      --text-light: #718096;
-      --bg-light: #f7fafc;
+      --primary: #0a1f3d;
+      --primary-900: #061427;
+      --primary-700: #122b52;
+      --secondary: #1b3a6b;
+      --accent: #e87722;
+      --accent-hover: #d16414;
+      --text-dark: #111a2b;
+      --text-muted: #5a6878;
+      --text-light: #8893a4;
+      --bg-soft: #f4f6fa;
+      --bg-alt: #eef1f6;
       --white: #ffffff;
-      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      --border: #e2e6ee;
+      --shadow-sm: 0 2px 10px rgba(10, 31, 61, 0.06);
+      --shadow-md: 0 10px 30px rgba(10, 31, 61, 0.08);
+      --shadow-lg: 0 20px 50px rgba(10, 31, 61, 0.12);
+      --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #f39a4a 100%);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    /* Reset y estilos base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
       color: var(--text-dark);
       overflow-x: hidden;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Navbar profesional */
+    ::selection { background: var(--accent); color: var(--white); }
+
+    /* ===== Navbar ===== */
     .navbar {
-      background: rgba(255, 255, 255, 0.98) !important;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.96) !important;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 1px 0 rgba(10, 31, 61, 0.06);
       padding: 1rem 0;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 0.6rem 0;
+      box-shadow: 0 6px 24px rgba(10, 31, 61, 0.08);
     }
 
     .navbar-brand {
       font-weight: 800;
-      font-size: 1.8rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      color: var(--primary) !important;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .navbar-brand::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 3px;
     }
 
     .nav-link {
       font-weight: 500;
+      font-size: 0.95rem;
       color: var(--text-dark) !important;
-      margin: 0 1rem;
+      margin: 0 0.75rem;
       padding: 0.5rem 0 !important;
       position: relative;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       left: 50%;
       width: 0;
       height: 2px;
-      background: var(--accent-color);
-      transition: all 0.3s ease;
+      background: var(--accent);
+      transition: var(--transition);
       transform: translateX(-50%);
     }
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link:hover { color: var(--accent) !important; }
 
-    .nav-link:hover {
-      color: var(--accent-color) !important;
+    .nav-cta {
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem !important;
+      border-radius: 50px;
+      margin-left: 1rem;
+      transition: var(--transition);
     }
+    .nav-cta:hover { background: var(--accent); color: var(--white) !important; }
+    .nav-cta::after { display: none !important; }
 
-    /* Dropdown menu styles */
     .dropdown-menu {
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(20px);
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      padding: 1rem 0;
-      margin-top: 0.5rem;
-      min-width: 280px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: 0.75rem 0;
+      margin-top: 0.6rem;
+      min-width: 290px;
     }
 
     .dropdown-item {
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.3rem;
       font-weight: 500;
+      font-size: 0.92rem;
       color: var(--text-dark);
-      transition: all 0.3s ease;
-      border-radius: 10px;
-      margin: 0 0.5rem;
+      transition: var(--transition);
+      margin: 0 0.4rem;
+      border-radius: 8px;
+      width: auto;
     }
 
     .dropdown-item:hover {
-      background: linear-gradient(135deg, var(--accent-color), #ff7a00);
-      color: white;
-      transform: translateX(5px);
+      background: var(--bg-soft);
+      color: var(--accent);
+      transform: translateX(4px);
     }
 
     .dropdown-item i {
-      width: 20px;
+      width: 22px;
       text-align: center;
+      color: var(--accent);
     }
 
-    .dropdown-toggle::after {
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .dropdown-toggle[aria-expanded="true"]::after {
-      transform: rotate(180deg);
-    }
-
-    /* Hero Section Industrial */
+    /* ===== Hero ===== */
     .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 160, 0.8) 100%),
-                  url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+      min-height: 100vh;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
-      color: white;
+      text-align: left;
+      color: var(--white);
+      overflow: hidden;
+      padding: 120px 0 80px;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
-                  linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
-                  linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.1) 75%), 
-                  linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.1) 75%);
-      background-size: 20px 20px;
-      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-      opacity: 0.1;
+      inset: 0;
+      background: url('img2/img1.jpeg') center center/cover no-repeat;
+      filter: blur(3px) brightness(0.55);
+      transform: scale(1.08);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(6, 20, 39, 0.85) 0%, rgba(10, 31, 61, 0.65) 50%, rgba(232, 119, 34, 0.25) 100%);
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 900px;
     }
 
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.5rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge i { color: var(--accent); }
+
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
-      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, #ffb06b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero .subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      font-weight: 300;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      margin-bottom: 2.5rem;
+      opacity: 0.92;
+      font-weight: 400;
+      max-width: 680px;
+      line-height: 1.6;
     }
 
     .hero-buttons {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
-    }
-
-    .btn-primary-custom {
-      background: var(--accent-color);
-      border: none;
-      padding: 1rem 2.5rem;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      color: white;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary-custom:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(245, 101, 0, 0.4);
-      color: white;
-    }
-
-    .btn-secondary-custom {
-      background: transparent;
-      border: 2px solid white;
-      padding: 1rem 2.5rem;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      color: white;
-      text-decoration: none;
-    }
-
-    .btn-secondary-custom:hover {
-      background: white;
-      color: var(--primary-color);
-    }
-
-    /* Sección About mejorada */
-    .about-section {
-      padding: 120px 0;
-      background: var(--bg-light);
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-light);
       margin-bottom: 3rem;
     }
 
-    .stats-grid {
-      margin-top: 4rem;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--accent-color);
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 1.1rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    /* Secciones de servicios profesionales */
-    .services-section {
-      padding: 120px 0;
-      background: white;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 20px;
-      padding: 3rem 2rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
+    .btn-primary-custom {
+      background: var(--accent);
       border: none;
-      height: 100%;
-      text-align: center;
+      padding: 0.95rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      color: var(--white);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 24px rgba(232, 119, 34, 0.35);
     }
 
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(232, 119, 34, 0.5);
+      background: var(--accent-hover);
+      color: var(--white);
     }
 
-    .service-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--gradient-primary);
-      border-radius: 20px;
+    .btn-secondary-custom {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 0.95rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      color: var(--white);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-secondary-custom:hover {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--white);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: 680px;
+    }
+
+    .hero-trust-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 2rem;
-      color: white;
-      font-size: 2rem;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      opacity: 0.85;
     }
 
-    .service-title {
-      font-size: 1.3rem;
+    .hero-trust-item i { color: var(--accent); font-size: 1.05rem; }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: bounceDown 2.2s ease-in-out infinite;
+    }
+    @keyframes bounceDown {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 10px); }
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      padding: 110px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-soft { background: var(--bg-soft); }
+
+    /* Subtle blurred industrial backdrop for white sections */
+    .section-bg-industrial {
+      position: relative;
+    }
+    .section-bg-industrial::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img2/img2.jpeg') right center/cover no-repeat;
+      filter: blur(6px);
+      opacity: 0.05;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .section-bg-industrial > .container { position: relative; z-index: 1; }
+
+    .section-bg-refinery::before {
+      background-image: url('img2/img1.jpeg');
+      opacity: 0.04;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--primary-color);
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       margin-bottom: 1rem;
     }
 
-    .service-description {
-      color: var(--text-light);
-      line-height: 1.6;
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
-    /* Brands section mejorada */
-    .brands-section {
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== About / Stats ===== */
+    .about-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.3rem;
+    }
+
+    .about-feature-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.8rem;
+    }
+
+    .about-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .about-feature-list i {
+      color: var(--accent);
+      background: rgba(232, 119, 34, 0.1);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+
+    .stat-item:hover::before { transform: scaleX(1); }
+
+    .stat-number {
+      font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* ===== Product Cards (Servicios) ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.8rem;
+      overflow: hidden;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      color: var(--white);
+      cursor: pointer;
+      transition: var(--transition);
+      isolation: isolate;
+      background: var(--primary);
+    }
+
+    /* Background image layer */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(2px) saturate(1.1);
+      transform: scale(1.08);
+      transition: transform 0.8s ease, filter 0.5s ease;
+      z-index: -2;
+    }
+
+    /* Color tint overlay per industry */
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(10, 31, 61, 0.25);
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.15);
+      filter: blur(1px) saturate(1.2);
+    }
+
+    /* Per-industry backgrounds (local images) + color tint overlays */
+    .sc-petroleo::before { background-image: url('img2/img2.jpeg'); }
+    .sc-petroleo::after { background: linear-gradient(135deg, rgba(10, 31, 61, 0.82) 0%, rgba(232, 119, 34, 0.55) 100%); }
+
+    .sc-herramientas::before { background-image: url('img2/herramientas.jpg'); }
+    .sc-herramientas::after { background: linear-gradient(135deg, rgba(10, 31, 61, 0.82) 0%, rgba(27, 58, 107, 0.7) 100%); }
+
+    .sc-quimicos::before { background-image: url('img2/quimicos.jpg'); }
+    .sc-quimicos::after { background: linear-gradient(135deg, rgba(15, 76, 82, 0.85) 0%, rgba(5, 150, 105, 0.7) 100%); }
+
+    .sc-aguas::before { background-image: url('img2/aguas.jpg'); }
+    .sc-aguas::after { background: linear-gradient(135deg, rgba(7, 58, 94, 0.82) 0%, rgba(14, 116, 144, 0.7) 100%); }
+
+    .sc-electricos::before { background-image: url('img2/electricos.jpg'); }
+    .sc-electricos::after { background: linear-gradient(135deg, rgba(43, 31, 8, 0.8) 0%, rgba(217, 119, 6, 0.55) 100%); }
+
+    .sc-bodegas::before { background-image: url('img2/bodegas.jpg'); }
+    .sc-bodegas::after { background: linear-gradient(135deg, rgba(41, 10, 20, 0.82) 0%, rgba(127, 29, 29, 0.6) 100%); }
+
+    .sc-hoteleria::before { background-image: url('img2/hoteleria.jpg'); }
+    .sc-hoteleria::after { background: linear-gradient(135deg, rgba(41, 31, 20, 0.78) 0%, rgba(146, 100, 44, 0.55) 100%); }
+
+    .sc-cuentas::before { background-image: url('img2/cuentas.jpg'); }
+    .sc-cuentas::after { background: linear-gradient(135deg, rgba(10, 31, 61, 0.85) 0%, rgba(55, 65, 81, 0.7) 100%); }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 1.8rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .service-description {
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      font-size: 0.94rem;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      margin-top: 1.3rem;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.85;
+      transition: var(--transition);
+    }
+
+    .service-link i { transition: transform 0.3s ease; }
+    .service-card:hover .service-link { opacity: 1; color: var(--accent); }
+    .service-card:hover .service-link i { transform: translateX(4px); color: var(--accent); }
+
+    /* ===== Rubro detail sections ===== */
+    .rubro-section {
       padding: 100px 0;
-      background: var(--bg-light);
+      position: relative;
+      overflow: hidden;
+      --rubro-accent: var(--accent);
+      --rubro-accent-rgb: 232, 119, 34;
+      --rubro-img: url('img2/img1.jpeg');
+      --rubro-tint: linear-gradient(135deg, rgba(10, 31, 61, 0.85) 0%, rgba(27, 58, 107, 0.65) 100%);
+    }
+
+    .rubro-section.soft { background: var(--bg-soft); }
+
+    .rubro-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 50%, rgba(var(--rubro-accent-rgb), 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(var(--rubro-accent-rgb), 0.04) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Per-rubro accent colors */
+    .rubro-petroleo    { --rubro-accent: #e87722; --rubro-accent-rgb: 232, 119, 34; --rubro-img: url('img2/img2.jpeg');
+      --rubro-tint: linear-gradient(160deg, rgba(6, 20, 39, 0.78) 0%, rgba(232, 119, 34, 0.45) 100%); }
+    .rubro-herramientas{ --rubro-accent: #1b3a6b; --rubro-accent-rgb: 27, 58, 107; --rubro-img: url('img2/herramientas.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(10, 31, 61, 0.82) 0%, rgba(27, 58, 107, 0.55) 100%); }
+    .rubro-quimicos    { --rubro-accent: #059669; --rubro-accent-rgb: 5, 150, 105;  --rubro-img: url('img2/quimicos.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(6, 78, 59, 0.8) 0%, rgba(5, 150, 105, 0.5) 100%); }
+    .rubro-aguas       { --rubro-accent: #0891b2; --rubro-accent-rgb: 8, 145, 178;  --rubro-img: url('img2/aguas.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(7, 58, 94, 0.78) 0%, rgba(14, 116, 144, 0.5) 100%); }
+    .rubro-electricos  { --rubro-accent: #d97706; --rubro-accent-rgb: 217, 119, 6;  --rubro-img: url('img2/electricos.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(38, 25, 10, 0.78) 0%, rgba(217, 119, 6, 0.45) 100%); }
+    .rubro-bodegas     { --rubro-accent: #b91c1c; --rubro-accent-rgb: 185, 28, 28;  --rubro-img: url('img2/bodegas.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(41, 10, 20, 0.82) 0%, rgba(153, 27, 27, 0.5) 100%); }
+    .rubro-hoteleria   { --rubro-accent: #b45309; --rubro-accent-rgb: 180, 83, 9;   --rubro-img: url('img2/hoteleria.jpg');
+      --rubro-tint: linear-gradient(160deg, rgba(41, 31, 20, 0.75) 0%, rgba(146, 100, 44, 0.45) 100%); }
+
+    .rubro-cover {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 440px;
+      height: 100%;
+      padding: 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--white);
+      isolation: isolate;
+      box-shadow: 0 20px 50px rgba(10, 31, 61, 0.18);
+    }
+
+    .rubro-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--rubro-img) center/cover no-repeat;
+      z-index: -2;
+      transform: scale(1.02);
+      transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .rubro-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--rubro-tint);
+      z-index: -1;
+    }
+
+    .rubro-cover:hover::before { transform: scale(1.1); }
+
+    .rubro-number {
+      font-size: 5.5rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: rgba(255, 255, 255, 0.22);
+      letter-spacing: -0.05em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .rubro-number::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--rubro-accent);
+      margin-top: 1.2rem;
+      border-radius: 2px;
+    }
+
+    .rubro-cover .section-eyebrow {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0.8rem;
+    }
+
+    .rubro-cover .rubro-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.02em;
+    }
+
+    .rubro-cover .rubro-desc {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin-bottom: 1.8rem;
+      max-width: 90%;
+    }
+
+    .rubro-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.6rem;
+      background: var(--rubro-accent);
+      color: var(--white) !important;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: var(--transition);
+      align-self: flex-start;
+      box-shadow: 0 8px 22px rgba(var(--rubro-accent-rgb), 0.4);
+    }
+
+    .rubro-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(var(--rubro-accent-rgb), 0.55);
+      color: var(--white);
+    }
+
+    .rubro-cta i { transition: transform 0.3s ease; }
+    .rubro-cta:hover i { transform: translateX(4px); }
+
+    /* Sub-categoría cards */
+    .subservice-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.8rem 1.6rem;
+      transition: var(--transition);
+      height: 100%;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subservice-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--rubro-accent, var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .subservice-card::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(var(--rubro-accent-rgb), 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .subservice-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(var(--rubro-accent-rgb), 0.12);
+      border-color: transparent;
+    }
+
+    .subservice-card:hover::before { transform: scaleX(1); }
+    .subservice-card:hover::after { opacity: 1; }
+
+    .subservice-icon {
+      width: 54px;
+      height: 54px;
+      background: rgba(var(--rubro-accent-rgb), 0.1);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rubro-accent, var(--primary));
+      font-size: 1.35rem;
+      margin-bottom: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .subservice-card:hover .subservice-icon {
+      background: var(--rubro-accent);
+      color: var(--white);
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    .subservice-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .subservice-description {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    /* ===== Back to top button ===== */
+    .back-to-top {
+      position: fixed;
+      width: 44px;
+      height: 44px;
+      bottom: 96px;
+      right: 32px;
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      font-size: 0.95rem;
+      z-index: 999;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    /* ===== Scroll progress bar ===== */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), #ffb06b);
+      z-index: 1050;
+      transition: width 0.1s linear;
+      box-shadow: 0 1px 6px rgba(232, 119, 34, 0.4);
+    }
+
+    /* ===== Brands ===== */
+    .brands-section {
+      padding: 90px 0;
+      background: var(--bg-soft);
+      position: relative;
     }
 
     .brand-logo {
-      max-height: 80px;
+      max-height: 70px;
       width: auto;
-      opacity: 0.7;
-      transition: all 0.3s ease;
+      max-width: 140px;
+      opacity: 0.55;
+      transition: var(--transition);
       filter: grayscale(100%);
+      margin: 1rem 1.5rem;
     }
 
     .brand-logo:hover {
       opacity: 1;
       filter: grayscale(0%);
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
-    /* Contact section mejorada */
-    .contact-section {
-      padding: 120px 0;
-      background: white;
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 44px;
+      height: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--white);
+      border-radius: 50%;
+      opacity: 1;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .carousel-control-prev { left: -10px; }
+    .carousel-control-next { right: -10px; }
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+      background: var(--accent);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(20%);
+      width: 18px;
+      height: 18px;
+    }
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+      filter: invert(100%);
     }
 
+    /* ===== Contact ===== */
     .contact-info-card {
       background: var(--gradient-primary);
-      color: white;
-      border-radius: 20px;
-      padding: 3rem;
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
       height: 100%;
+      position: relative;
+      overflow: hidden;
     }
+
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img2/img1.jpeg') center/cover no-repeat;
+      opacity: 0.08;
+      filter: blur(2px);
+    }
+
+    .contact-info-card > * { position: relative; z-index: 1; }
 
     .contact-info-item {
       display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.8rem;
+      gap: 1rem;
+    }
+
+    .contact-info-item .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 2rem;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.1rem;
+      flex-shrink: 0;
     }
 
-    .contact-info-item i {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      width: 40px;
-    }
-
-    .contact-form {
-      background: white;
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .form-control {
-      border: 2px solid #e2e8f0;
-      border-radius: 15px;
-      padding: 1rem;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-    }
-
-    .form-control:focus {
-      border-color: var(--accent-color);
-      box-shadow: 0 0 0 0.2rem rgba(245, 101, 0, 0.25);
-    }
-
-    /* Footer mejorado */
-    .footer {
-      background: var(--primary-color);
-      color: white;
-      padding: 60px 0 30px;
-    }
-
-    .footer h5 {
-      color: white;
-      margin-bottom: 1.5rem;
+    .contact-info-item h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.25rem;
       font-weight: 600;
     }
 
-    .footer a {
-      color: rgba(255, 255, 255, 0.7);
+    .contact-info-item p, .contact-info-item a {
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: 500;
+      margin: 0;
       text-decoration: none;
-      transition: all 0.3s ease;
+      word-break: break-word;
+    }
+    .contact-info-item a:hover { color: var(--accent); }
+
+    .contact-form-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
     }
 
-    .footer a:hover {
-      color: var(--accent-color);
+    .form-control, .form-floating > .form-control {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      transition: var(--transition);
+      font-size: 0.98rem;
+      background: var(--bg-soft);
     }
 
-    /* WhatsApp flotante */
+    .form-floating > .form-control {
+      height: 60px;
+      padding-top: 1.6rem;
+    }
+
+    .form-floating > textarea.form-control { height: 150px; }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.15);
+    }
+
+    .form-floating > label { color: var(--text-muted); }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--primary-900);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 70px 0 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img2/img1.jpeg') center/cover no-repeat;
+      opacity: 0.04;
+      filter: blur(3px);
+    }
+
+    .footer > .container { position: relative; z-index: 1; }
+
+    .footer-brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .footer-brand::before {
+      content: '';
+      width: 6px; height: 26px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .footer h5 {
+      color: var(--white);
+      margin-bottom: 1.4rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer a:hover { color: var(--accent); padding-left: 4px; }
+
+    .footer ul { list-style: none; padding: 0; }
+    .footer ul li { margin-bottom: 0.65rem; }
+
+    .social-links { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+    .social-links a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: var(--transition);
+    }
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      padding-left: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== WhatsApp Float ===== */
     .whatsapp-float {
       position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
-      right: 30px;
+      width: 58px;
+      height: 58px;
+      bottom: 28px;
+      right: 28px;
       background: #25d366;
-      color: white;
+      color: var(--white);
       border-radius: 50%;
-      text-align: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      font-size: 1.7rem;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
       z-index: 1000;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      color: white;
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid #25d366;
+      opacity: 0.4;
+      animation: ripple 1.8s ease-out infinite;
     }
 
-    /* Responsive */
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      color: var(--white);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    /* ===== Reveal animations ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+      .section { padding: 80px 0; }
+      .navbar-collapse { background: var(--white); padding: 1rem; border-radius: var(--radius-md); margin-top: 1rem; box-shadow: var(--shadow-md); }
+      .nav-link { margin: 0.3rem 0; }
+      .nav-cta { margin-left: 0; margin-top: 0.5rem; display: inline-block; }
+      .dropdown-menu { box-shadow: none; border: none; margin-top: 0; }
+    }
+
+    @media (max-width: 991px) {
+      .rubro-cover { min-height: 340px; margin-bottom: 1rem; }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero .subtitle {
-        font-size: 1.1rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      .service-card {
-        margin-bottom: 2rem;
-      }
+      .hero { padding: 110px 0 60px; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero-trust { justify-content: center; }
+      .hero-buttons { justify-content: center; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-info-card, .contact-form-wrapper { padding: 2rem 1.5rem; }
+      .footer { padding-top: 50px; text-align: center; }
+      .footer-brand, .social-links { justify-content: center; }
+      .footer a:hover { padding-left: 0; }
+      .whatsapp-float { width: 54px; height: 54px; bottom: 20px; right: 20px; font-size: 1.5rem; }
+      .back-to-top { bottom: 84px; right: 20px; width: 40px; height: 40px; }
+      .rubro-number { font-size: 4rem; }
+      .rubro-cover { padding: 2rem 1.6rem; min-height: 300px; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .section { padding: 60px 0; }
     }
   </style>
 </head>
 <body>
 
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
   <div class="container">
     <a class="navbar-brand" href="#home">WC INSUMOS</a>
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav"
-    >
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menú">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#productos" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
           </a>
           <ul class="dropdown-menu" aria-labelledby="productosDropdown">
-            <li><a class="dropdown-item" href="#herramientas">
-              <i class="fas fa-tools me-2"></i>Herramientas Manuales y Eléctricas
-            </a></li>
-            <li><a class="dropdown-item" href="#quimicos">
-              <i class="fas fa-flask me-2"></i>Insumos Químicos
-            </a></li>
-            <li><a class="dropdown-item" href="#bodegas">
-              <i class="fas fa-wine-bottle me-2"></i>Insumos para Bodegas
-            </a></li>
-            <li><a class="dropdown-item" href="#petroleras">
-              <i class="fas fa-oil-well me-2"></i>Insumos para Petroleras y Mineras
-            </a></li>
-            <li><a class="dropdown-item" href="#hoteleria">
-              <i class="fas fa-hotel me-2"></i>Insumos Hotelería-Gastronomía
-            </a></li>
-            <li><a class="dropdown-item" href="#electricos">
-              <i class="fas fa-bolt me-2"></i>Insumos Eléctricos
-            </a></li>
-            <li><a class="dropdown-item" href="#aguas">
-              <i class="fas fa-water me-2"></i>Tratamiento de Aguas
-            </a></li>
+            <li><a class="dropdown-item" href="#petroleras"><i class="fas fa-oil-well"></i>Minería y Petróleo</a></li>
+            <li><a class="dropdown-item" href="#herramientas"><i class="fas fa-tools"></i>Herramientas Manuales y Eléctricas</a></li>
+            <li><a class="dropdown-item" href="#quimicos"><i class="fas fa-flask"></i>Insumos Químicos</a></li>
+            <li><a class="dropdown-item" href="#aguas"><i class="fas fa-water"></i>Tratamiento de Aguas</a></li>
+            <li><a class="dropdown-item" href="#electricos"><i class="fas fa-bolt"></i>Insumos Eléctricos</a></li>
+            <li><a class="dropdown-item" href="#bodegas"><i class="fas fa-wine-bottle"></i>Insumos para Bodegas</a></li>
+            <li><a class="dropdown-item" href="#hoteleria"><i class="fas fa-hotel"></i>Hotelería y Gastronomía</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#marcas">Marcas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Soluciones Integrales para la Industria</h1>
-    <p class="subtitle">Más de 10 años brindando insumos industriales, herramientas profesionales y servicios especializados para los sectores más exigentes del mercado.</p>
-    <div class="hero-buttons">
-      <a href="#productos" class="btn-primary-custom">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-badge">
         <i class="fas fa-industry"></i>
-        Ver Productos
-      </a>
-      <a href="#contacto" class="btn-secondary-custom">
-        Solicitar Cotización
-      </a>
+        Mendoza · Argentina · Distribución Nacional
+      </span>
+      <h1>Soluciones Integrales para la <span>Industria Pesada</span></h1>
+      <p class="subtitle">
+        Proveemos insumos, herramientas y servicios especializados a los sectores más exigentes del mercado: minería, petróleo, bodegas, hotelería y tratamiento de aguas.
+      </p>
+      <div class="hero-buttons">
+        <a href="#productos" class="btn-primary-custom">
+          <i class="fas fa-industry"></i>
+          Ver Productos
+        </a>
+        <a href="#contacto" class="btn-secondary-custom">
+          <i class="fas fa-file-invoice"></i>
+          Solicitar Cotización
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><i class="fas fa-shield-alt"></i> Productos certificados</div>
+        <div class="hero-trust-item"><i class="fas fa-truck-fast"></i> Entrega rápida</div>
+        <div class="hero-trust-item"><i class="fas fa-headset"></i> Asesoramiento técnico</div>
+      </div>
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Descubrí más</span>
+    <i class="fas fa-chevron-down"></i>
   </div>
 </section>
 
-<!-- About Section -->
-<section class="about-section">
+<!-- About / Stats -->
+<section id="nosotros" class="section section-soft section-bg-industrial">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="section-title">Experiencia y Confianza</h2>
-        <p class="section-subtitle">
-          En WC INSUMOS somos especialistas en brindar soluciones integrales para la industria. 
-          Trabajamos con los sectores más exigentes, garantizando calidad, confiabilidad y servicio profesional.
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="section-eyebrow">Nosotros</span>
+        <h2 class="section-title">Experiencia, confianza y compromiso industrial</h2>
+        <p class="about-lead">
+          En WC INSUMOS nos especializamos en abastecer a empresas que no se pueden dar el lujo de detenerse.
+          Trabajamos con clientes del sector minero, petrolero, vitivinícola y hotelero, entendiendo la exigencia operativa de cada uno.
         </p>
-        <p class="mb-4">
-          Nuestro equipo multidisciplinario cuenta con la experiencia necesaria para asesorarte 
-          en la selección de los mejores productos y servicios para tu empresa.
+        <p class="about-lead">
+          Nuestro equipo selecciona, asesora y acompaña en la elección de productos de primera línea, con logística puntual y soporte real cuando se necesita.
         </p>
+        <ul class="about-feature-list">
+          <li><i class="fas fa-check"></i> Representación de marcas líderes internacionales</li>
+          <li><i class="fas fa-check"></i> Asesoramiento técnico personalizado</li>
+          <li><i class="fas fa-check"></i> Cuentas corrientes y financiación a empresas</li>
+          <li><i class="fas fa-check"></i> Cobertura logística en todo el territorio nacional</li>
+        </ul>
       </div>
-      <div class="col-lg-6">
-        <div class="row stats-grid">
-          <div class="col-6">
-            <div class="stat-item">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Años de Experiencia</span>
+      <div class="col-lg-6 reveal">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-target="5" data-suffix="+">+5</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="25" data-suffix="+">+25</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="30" data-suffix="+">+30</span>
+            <span class="stat-label">Marcas Representadas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-static="true">24hs</span>
+            <span class="stat-label">Soporte Disponible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Productos -->
+<section id="productos" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Nuestros Productos</span>
+      <h2 class="section-title">Soluciones especializadas por industria</h2>
+      <p class="section-subtitle">Un portfolio completo para los sectores industriales más demandantes del país.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="#petroleras" class="service-card sc-petroleo reveal">
+        <div class="service-icon"><i class="fas fa-oil-well"></i></div>
+        <h3 class="service-title">Minería y Petróleo</h3>
+        <p class="service-description">Insumos especializados, EPP certificado y repuestos robustos para la industria extractiva.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#herramientas" class="service-card sc-herramientas reveal">
+        <div class="service-icon"><i class="fas fa-tools"></i></div>
+        <h3 class="service-title">Herramientas Manuales y Eléctricas</h3>
+        <p class="service-description">Herramientas profesionales de las marcas líderes para uso industrial y comercial intensivo.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#quimicos" class="service-card sc-quimicos reveal">
+        <div class="service-icon"><i class="fas fa-flask"></i></div>
+        <h3 class="service-title">Insumos Químicos</h3>
+        <p class="service-description">Productos químicos especializados para procesos industriales y tratamientos específicos.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#aguas" class="service-card sc-aguas reveal">
+        <div class="service-icon"><i class="fas fa-water"></i></div>
+        <h3 class="service-title">Tratamiento de Aguas</h3>
+        <p class="service-description">Sistemas para purificación, osmosis y gestión integral de aguas industriales.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#electricos" class="service-card sc-electricos reveal">
+        <div class="service-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="service-title">Insumos Eléctricos</h3>
+        <p class="service-description">Materiales, componentes e iluminación industrial para instalaciones de alta exigencia.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#bodegas" class="service-card sc-bodegas reveal">
+        <div class="service-icon"><i class="fas fa-wine-bottle"></i></div>
+        <h3 class="service-title">Insumos para Bodegas</h3>
+        <p class="service-description">Equipamiento y suministros especializados para el sector vitivinícola mendocino.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#hoteleria" class="service-card sc-hoteleria reveal">
+        <div class="service-icon"><i class="fas fa-hotel"></i></div>
+        <h3 class="service-title">Hotelería y Gastronomía</h3>
+        <p class="service-description">Equipos y suministros profesionales para hoteles, restaurantes y servicios de catering.</p>
+        <span class="service-link">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a href="#contacto" class="service-card sc-cuentas reveal">
+        <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+        <h3 class="service-title">Cuentas Corrientes</h3>
+        <p class="service-description">Facilidades de pago y planes de financiación a medida para empresas y proyectos.</p>
+        <span class="service-link">Consultanos <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Minería y Petróleo (detalle) -->
+<section id="petroleras" class="rubro-section rubro-petroleo">
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">01</span>
+          <div>
+            <span class="section-eyebrow">Industria Extractiva</span>
+            <h2 class="rubro-title">Minería y Petróleo</h2>
+            <p class="rubro-desc">Equipamiento robusto y seguro para las operaciones más exigentes del sector extractivo argentino.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Minería y Petróleo">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-hard-hat"></i></div>
+              <h4 class="subservice-title">Seguridad Industrial</h4>
+              <p class="subservice-description">EPP certificado para ambientes de alto riesgo y normativa vigente.</p>
             </div>
           </div>
-          <div class="col-6">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Clientes Satisfechos</span>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-cog"></i></div>
+              <h4 class="subservice-title">Maquinaria Pesada</h4>
+              <p class="subservice-description">Repuestos, rodamientos y componentes para equipos pesados.</p>
             </div>
           </div>
-          <div class="col-6">
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Marcas Representadas</span>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-fire"></i></div>
+              <h4 class="subservice-title">Alta Temperatura</h4>
+              <p class="subservice-description">Materiales resistentes a condiciones extremas y fricción continua.</p>
             </div>
           </div>
-          <div class="col-6">
-            <div class="stat-item">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Soporte Técnico</span>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-gas-pump"></i></div>
+              <h4 class="subservice-title">Manejo de Fluidos</h4>
+              <p class="subservice-description">Bombas, válvulas y sistemas de transporte industrial.</p>
             </div>
           </div>
         </div>
@@ -578,562 +1451,455 @@
   </div>
 </section>
 
-<!-- Productos Section -->
-<section id="productos" class="services-section">
+<!-- Herramientas -->
+<section id="herramientas" class="rubro-section rubro-herramientas soft">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-subtitle">Soluciones especializadas para cada sector industrial</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-tools"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch flex-lg-row-reverse">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">02</span>
+          <div>
+            <span class="section-eyebrow">Profesionales</span>
+            <h2 class="rubro-title">Herramientas Manuales y Eléctricas</h2>
+            <p class="rubro-desc">Herramientas de las marcas líderes para uso industrial y comercial intensivo.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Herramientas">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h3 class="service-title">Herramientas Manuales y Eléctricas</h3>
-          <p class="service-description">Herramientas profesionales de las mejores marcas para todo tipo de trabajos industriales y comerciales.</p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-flask"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-hammer"></i></div>
+              <h4 class="subservice-title">Herramientas de Mano</h4>
+              <p class="subservice-description">Martillos, destornilladores, llaves, alicates y más.</p>
+            </div>
           </div>
-          <h3 class="service-title">Insumos Químicos</h3>
-          <p class="service-description">Productos químicos especializados para procesos industriales y tratamientos específicos.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-wine-bottle"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-screwdriver"></i></div>
+              <h4 class="subservice-title">Herramientas Eléctricas</h4>
+              <p class="subservice-description">Taladros, amoladoras, sierras y equipos eléctricos.</p>
+            </div>
           </div>
-          <h3 class="service-title">Insumos para Bodegas</h3>
-          <p class="service-description">Equipamiento y suministros especializados para la industria vitivinícola y bodegas.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-oil-well"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-wrench"></i></div>
+              <h4 class="subservice-title">Herramientas de Precisión</h4>
+              <p class="subservice-description">Instrumentos de medición y herramientas especializadas.</p>
+            </div>
           </div>
-          <h3 class="service-title">Minería y Petróleo</h3>
-          <p class="service-description">Insumos especializados para la industria extractiva, minería y sector petrolero.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-hotel"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-toolbox"></i></div>
+              <h4 class="subservice-title">Accesorios</h4>
+              <p class="subservice-description">Cajas de herramientas, organizadores y accesorios.</p>
+            </div>
           </div>
-          <h3 class="service-title">Hotelería y Gastronomía</h3>
-          <p class="service-description">Equipamiento y suministros para hoteles, restaurantes y sector gastronómico.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3 class="service-title">Insumos Eléctricos</h3>
-          <p class="service-description">Materiales eléctricos, componentes y sistemas para instalaciones industriales.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 offset-lg-2">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-water"></i>
-          </div>
-          <h3 class="service-title">Tratamiento de Aguas</h3>
-          <p class="service-description">Sistemas y productos para tratamiento, purificación y gestión de aguas industriales.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-credit-card"></i>
-          </div>
-          <h3 class="service-title">Cuentas Corrientes</h3>
-          <p class="service-description">Facilidades de pago y financiación para empresas. Consulta por nuestros planes especiales.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Secciones de Categorías de Productos -->
-<section id="herramientas" class="services-section" style="background: var(--bg-light);">
+<!-- Químicos -->
+<section id="quimicos" class="rubro-section rubro-quimicos">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Herramientas Manuales y Eléctricas</h2>
-      <p class="section-subtitle">Herramientas profesionales de las mejores marcas para todo tipo de trabajos industriales</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-hammer"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">03</span>
+          <div>
+            <span class="section-eyebrow">Especializados</span>
+            <h2 class="rubro-title">Insumos Químicos</h2>
+            <p class="rubro-desc">Productos químicos especializados para procesos industriales y tratamientos específicos.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Insumos Químicos">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h4 class="service-title">Herramientas de Mano</h4>
-          <p class="service-description">Martillos, destornilladores, llaves, alicates y más.</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-screwdriver"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-vial"></i></div>
+              <h4 class="subservice-title">Reactivos Industriales</h4>
+              <p class="subservice-description">Productos químicos para procesos industriales específicos.</p>
+            </div>
           </div>
-          <h4 class="service-title">Herramientas Eléctricas</h4>
-          <p class="service-description">Taladros, amoladoras, sierras y equipos eléctricos.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-wrench"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-spray-can"></i></div>
+              <h4 class="subservice-title">Solventes y Limpieza</h4>
+              <p class="subservice-description">Solventes industriales y productos de limpieza especializada.</p>
+            </div>
           </div>
-          <h4 class="service-title">Herramientas de Precisión</h4>
-          <p class="service-description">Instrumentos de medición y herramientas especializadas.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-toolbox"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-shield-alt"></i></div>
+              <h4 class="subservice-title">Productos de Protección</h4>
+              <p class="subservice-description">Anticorrosivos, inhibidores y productos de protección.</p>
+            </div>
           </div>
-          <h4 class="service-title">Accesorios</h4>
-          <p class="service-description">Cajas de herramientas, organizadores y accesorios.</p>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-microscope"></i></div>
+              <h4 class="subservice-title">Análisis y Control</h4>
+              <p class="subservice-description">Productos para análisis y control de calidad.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="quimicos" class="services-section">
+<!-- Aguas -->
+<section id="aguas" class="rubro-section rubro-aguas soft">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Insumos Químicos</h2>
-      <p class="section-subtitle">Productos químicos especializados para procesos industriales</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-vial"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch flex-lg-row-reverse">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">04</span>
+          <div>
+            <span class="section-eyebrow">Gestión Hídrica</span>
+            <h2 class="rubro-title">Tratamiento de Aguas</h2>
+            <p class="rubro-desc">Sistemas avanzados para purificación, osmosis y gestión integral de aguas industriales.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Tratamiento de Aguas">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h4 class="service-title">Reactivos Industriales</h4>
-          <p class="service-description">Productos químicos para procesos industriales específicos.</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-spray-can"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-filter"></i></div>
+              <h4 class="subservice-title">Filtración</h4>
+              <p class="subservice-description">Sistemas de filtros y purificación de agua industrial.</p>
+            </div>
           </div>
-          <h4 class="service-title">Solventes y Limpieza</h4>
-          <p class="service-description">Solventes industriales y productos de limpieza especializada.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-tint"></i></div>
+              <h4 class="subservice-title">Osmosis Inversa</h4>
+              <p class="subservice-description">Equipos de osmosis para agua ultrapura.</p>
+            </div>
           </div>
-          <h4 class="service-title">Productos de Protección</h4>
-          <p class="service-description">Anticorrosivos, inhibidores y productos de protección.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-microscope"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-recycle"></i></div>
+              <h4 class="subservice-title">Tratamiento de Residuos</h4>
+              <p class="subservice-description">Sistemas para tratamiento de aguas residuales.</p>
+            </div>
           </div>
-          <h4 class="service-title">Análisis y Control</h4>
-          <p class="service-description">Productos para análisis y control de calidad.</p>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-chart-line"></i></div>
+              <h4 class="subservice-title">Monitoreo</h4>
+              <p class="subservice-description">Sensores y equipos de control de calidad.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="bodegas" class="services-section" style="background: var(--bg-light);">
+<!-- Eléctricos -->
+<section id="electricos" class="rubro-section rubro-electricos">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Insumos para Bodegas</h2>
-      <p class="section-subtitle">Equipamiento especializado para la industria vitivinícola</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-wine-glass"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">05</span>
+          <div>
+            <span class="section-eyebrow">Instalaciones</span>
+            <h2 class="rubro-title">Insumos Eléctricos</h2>
+            <p class="rubro-desc">Componentes, iluminación y sistemas eléctricos para instalaciones industriales de alta exigencia.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Insumos Eléctricos">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h4 class="service-title">Proceso de Fermentación</h4>
-          <p class="service-description">Equipos y productos para fermentación controlada.</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-filter"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-plug"></i></div>
+              <h4 class="subservice-title">Componentes Básicos</h4>
+              <p class="subservice-description">Cables, enchufes, interruptores y componentes eléctricos.</p>
+            </div>
           </div>
-          <h4 class="service-title">Filtración</h4>
-          <p class="service-description">Sistemas de filtración y clarificación del vino.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-thermometer-half"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-lightbulb"></i></div>
+              <h4 class="subservice-title">Iluminación Industrial</h4>
+              <p class="subservice-description">Luminarias LED y sistemas de iluminación profesional.</p>
+            </div>
           </div>
-          <h4 class="service-title">Control de Temperatura</h4>
-          <p class="service-description">Sistemas de refrigeración y control térmico.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-box"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-battery-full"></i></div>
+              <h4 class="subservice-title">Energía</h4>
+              <p class="subservice-description">Baterías, UPS y sistemas de alimentación.</p>
+            </div>
           </div>
-          <h4 class="service-title">Envasado</h4>
-          <p class="service-description">Equipos de embotellado y etiquetado.</p>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-shield-halved"></i></div>
+              <h4 class="subservice-title">Protección</h4>
+              <p class="subservice-description">Fusibles, disyuntores y protecciones eléctricas.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="petroleras" class="services-section">
+<!-- Bodegas -->
+<section id="bodegas" class="rubro-section rubro-bodegas soft">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Insumos para Petroleras y Mineras</h2>
-      <p class="section-subtitle">Equipamiento robusto para la industria extractiva</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-hard-hat"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch flex-lg-row-reverse">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">06</span>
+          <div>
+            <span class="section-eyebrow">Vitivinicultura</span>
+            <h2 class="rubro-title">Insumos para Bodegas</h2>
+            <p class="rubro-desc">Equipamiento y suministros especializados para la industria vitivinícola mendocina.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Insumos para Bodegas">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h4 class="service-title">Seguridad Industrial</h4>
-          <p class="service-description">EPP certificado para ambientes de alto riesgo.</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cog"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-wine-glass"></i></div>
+              <h4 class="subservice-title">Fermentación</h4>
+              <p class="subservice-description">Equipos y productos para fermentación controlada.</p>
+            </div>
           </div>
-          <h4 class="service-title">Maquinaria Pesada</h4>
-          <p class="service-description">Repuestos y componentes para equipos pesados.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-fire"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-filter"></i></div>
+              <h4 class="subservice-title">Filtración</h4>
+              <p class="subservice-description">Sistemas de filtración y clarificación del vino.</p>
+            </div>
           </div>
-          <h4 class="service-title">Resistentes a Altas T°</h4>
-          <p class="service-description">Materiales resistentes a condiciones extremas.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-gas-pump"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-thermometer-half"></i></div>
+              <h4 class="subservice-title">Control de Temperatura</h4>
+              <p class="subservice-description">Sistemas de refrigeración y control térmico.</p>
+            </div>
           </div>
-          <h4 class="service-title">Manejo de Fluidos</h4>
-          <p class="service-description">Bombas, válvulas y sistemas de transporte.</p>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-box"></i></div>
+              <h4 class="subservice-title">Envasado</h4>
+              <p class="subservice-description">Equipos de embotellado y etiquetado.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="hoteleria" class="services-section" style="background: var(--bg-light);">
+<!-- Hotelería -->
+<section id="hoteleria" class="rubro-section rubro-hoteleria">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Insumos Hotelería-Gastronomía</h2>
-      <p class="section-subtitle">Equipamiento profesional para hoteles y restaurantes</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-utensils"></i>
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-5 reveal">
+        <div class="rubro-cover">
+          <span class="rubro-number">07</span>
+          <div>
+            <span class="section-eyebrow">Servicios</span>
+            <h2 class="rubro-title">Hotelería y Gastronomía</h2>
+            <p class="rubro-desc">Equipamiento y suministros profesionales para hoteles, restaurantes y catering.</p>
+            <a href="#contacto" class="rubro-cta" data-rubro="Hotelería y Gastronomía">
+              Consultar por este rubro <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h4 class="service-title">Equipos de Cocina</h4>
-          <p class="service-description">Hornos, cocinas, freidoras y equipos profesionales.</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-snowflake"></i>
+      <div class="col-lg-7">
+        <div class="row g-3 h-100">
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-utensils"></i></div>
+              <h4 class="subservice-title">Equipos de Cocina</h4>
+              <p class="subservice-description">Hornos, cocinas, freidoras y equipos profesionales.</p>
+            </div>
           </div>
-          <h4 class="service-title">Refrigeración</h4>
-          <p class="service-description">Heladeras, freezers y cámaras frigoríficas.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-soap"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-snowflake"></i></div>
+              <h4 class="subservice-title">Refrigeración</h4>
+              <p class="subservice-description">Heladeras, freezers y cámaras frigoríficas.</p>
+            </div>
           </div>
-          <h4 class="service-title">Limpieza</h4>
-          <p class="service-description">Productos de limpieza y desinfección profesional.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-bed"></i>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-soap"></i></div>
+              <h4 class="subservice-title">Limpieza</h4>
+              <p class="subservice-description">Productos de limpieza y desinfección profesional.</p>
+            </div>
           </div>
-          <h4 class="service-title">Hotelería</h4>
-          <p class="service-description">Amenities, blanquería y equipamiento hotelero.</p>
+          <div class="col-sm-6 reveal">
+            <div class="subservice-card">
+              <div class="subservice-icon"><i class="fas fa-bed"></i></div>
+              <h4 class="subservice-title">Hotelería</h4>
+              <p class="subservice-description">Amenities, blanquería y equipamiento hotelero.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="electricos" class="services-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Insumos Eléctricos</h2>
-      <p class="section-subtitle">Componentes y sistemas para instalaciones industriales</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-plug"></i>
-          </div>
-          <h4 class="service-title">Componentes Básicos</h4>
-          <p class="service-description">Cables, enchufes, interruptores y componentes.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h4 class="service-title">Iluminación Industrial</h4>
-          <p class="service-description">Luminarias LED y sistemas de iluminación.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-battery-full"></i>
-          </div>
-          <h4 class="service-title">Energía</h4>
-          <p class="service-description">Baterías, UPS y sistemas de alimentación.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h4 class="service-title">Protección</h4>
-          <p class="service-description">Fusibles, disyuntores y protecciones eléctricas.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="aguas" class="services-section" style="background: var(--bg-light);">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Tratamiento de Aguas</h2>
-      <p class="section-subtitle">Sistemas avanzados para purificación y gestión de aguas</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-filter"></i>
-          </div>
-          <h4 class="service-title">Filtración</h4>
-          <p class="service-description">Sistemas de filtros y purificación de agua.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-tint"></i>
-          </div>
-          <h4 class="service-title">Osmosis Inversa</h4>
-          <p class="service-description">Equipos de osmosis para agua ultrapura.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-recycle"></i>
-          </div>
-          <h4 class="service-title">Tratamiento de Residuos</h4>
-          <p class="service-description">Sistemas para tratamiento de aguas residuales.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h4 class="service-title">Monitoreo</h4>
-          <p class="service-description">Sensores y equipos de control de calidad.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Brands Section (Marcas) con Carousel -->
+<!-- Marcas -->
 <section id="marcas" class="brands-section">
   <div class="container">
-    <h2 class="section-title">Nuestras Marcas</h2>
-    <p class="section-subtitle">Trabajamos con las mejores marcas del mercado para garantizar calidad y confianza.</p>
-    <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Alianzas</span>
+      <h2 class="section-title">Nuestras Marcas</h2>
+      <p class="section-subtitle">Trabajamos con marcas líderes del mercado para garantizar calidad y confianza.</p>
+    </div>
+    <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
-        <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="d-flex justify-content-around align-items-center flex-wrap">
-            <img src="img/belimo.png" class="mx-3 mb-3 brand-logo" alt="Marca 1">
-            <img src="img/bahco.png" class="mx-3 mb-3 brand-logo" alt="Marca 2">
-            <img src="img/lisal.png" class="mx-3 mb-3 brand-logo" alt="Marca 3">
-            <img src="img/fv.png" class="mx-3 mb-3 brand-logo" alt="Marca 4">
+            <img src="img/belimo.png" class="brand-logo" alt="Belimo">
+            <img src="img/bahco.png" class="brand-logo" alt="Bahco">
+            <img src="img/lisal.png" class="brand-logo" alt="Lisal">
+            <img src="img/fv.png" class="brand-logo" alt="FV">
           </div>
         </div>
-        <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="d-flex justify-content-around align-items-center flex-wrap">
-            <img src="img/makita.png" class="mx-3 mb-3 brand-logo" alt="Marca 5">
-            <img src="img/ledvance.png" class="mx-3 mb-3 brand-logo" alt="Marca 6">
-            <img src="img/3m.png" class="mx-3 mb-3 brand-logo" alt="Marca 7">
+            <img src="img/makita.png" class="brand-logo" alt="Makita">
+            <img src="img/ledvance.png" class="brand-logo" alt="Ledvance">
+            <img src="img/3m.png" class="brand-logo" alt="3M">
           </div>
         </div>
-        <!-- Agrega más slides si lo necesitas -->
       </div>
-      <!-- Controles del carousel -->
-      <button class="carousel-control-prev" type="button" 
-              data-bs-target="#brandsCarousel" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#brandsCarousel" data-bs-slide="prev" aria-label="Anterior">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       </button>
-      <button class="carousel-control-next" type="button" 
-              data-bs-target="#brandsCarousel" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#brandsCarousel" data-bs-slide="next" aria-label="Siguiente">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contacto" class="contact-section">
+<!-- Contacto -->
+<section id="contacto" class="section">
   <div class="container">
-    <h2 class="section-title">Contacto</h2>
-    <div class="row g-5">
-      <!-- Información de contacto -->
-      <div class="col-md-4">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Hablemos</span>
+      <h2 class="section-title">Contactanos</h2>
+      <p class="section-subtitle">Contanos qué necesitás. Te respondemos con una propuesta profesional y personalizada.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-5 reveal">
         <div class="contact-info-card">
-          <h3 class="mb-4">Información de Contacto</h3>
+          <h3 class="mb-4" style="font-weight:700;">Información de Contacto</h3>
           <div class="contact-info-item">
-            <i class="fas fa-map-marker-alt"></i>
+            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
             <div>
-              <h5 class="mb-1">Dirección</h5>
-              <p class="mb-0">Mendoza, Argentina</p>
+              <h5>Dirección</h5>
+              <p>Mendoza, Argentina</p>
             </div>
           </div>
           <div class="contact-info-item">
-            <i class="fas fa-phone"></i>
+            <span class="contact-icon"><i class="fas fa-phone"></i></span>
             <div>
-              <h5 class="mb-1">Teléfono</h5>
-              <p class="mb-0">
-                <a href="tel:+54112223344" class="text-decoration-none text-white">
-                  +54 2612167948
-                </a>
-              </p>
+              <h5>Teléfono</h5>
+              <a href="tel:+542612167948">+54 261 216-7948</a>
             </div>
           </div>
           <div class="contact-info-item">
-            <i class="fas fa-envelope"></i>
+            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
             <div>
-              <h5 class="mb-1">Email</h5>
-              <p class="mb-0">
-                <a href="mailto:insumos.wc@gmail.com" class="text-decoration-none text-white">
-                  insumos.wc@gmail.com
-                </a>
-              </p>
+              <h5>Email</h5>
+              <a href="mailto:insumos.wc@gmail.com">insumos.wc@gmail.com</a>
             </div>
           </div>
           <div class="contact-info-item">
-            <i class="fas fa-clock"></i>
+            <span class="contact-icon"><i class="fas fa-clock"></i></span>
             <div>
-              <h5 class="mb-1">Horario de Atención</h5>
-              <p class="mb-0">Lunes a Viernes: 9:00 - 18:00</p>
+              <h5>Horario</h5>
+              <p>Lunes a Viernes · 9:00 - 18:00</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+            <div>
+              <h5>WhatsApp Directo</h5>
+              <a href="https://wa.me/542612167948" target="_blank" rel="noopener">Chatear ahora</a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Formulario de contacto -->
-      <div class="col-md-8">
-        <div class="contact-form">
-          <form class="shadow-sm p-4 rounded">
+      <div class="col-lg-7 reveal">
+        <div class="contact-form-wrapper">
+          <form>
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input 
-                    type="text" 
-                    class="form-control" 
-                    id="nombre"
-                    placeholder="Tu Nombre" 
-                    required
-                  >
-                  <label for="nombre">Tu Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Tu Nombre" required>
+                  <label for="nombre">Nombre completo</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input 
-                    type="email" 
-                    class="form-control" 
-                    id="email"
-                    placeholder="Tu Email" 
-                    required
-                  >
-                  <label for="email">Tu Email</label>
+                  <input type="text" class="form-control" id="empresa" placeholder="Empresa">
+                  <label for="empresa">Empresa</label>
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" placeholder="Tu Email" required>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+                  <label for="telefono">Teléfono</label>
                 </div>
               </div>
             </div>
             <div class="mb-3">
               <div class="form-floating">
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  id="asunto"
-                  placeholder="Asunto" 
-                  required
-                >
-                <label for="asunto">Asunto</label>
+                <input type="text" class="form-control" id="asunto" placeholder="Asunto" required>
+                <label for="asunto">Asunto / Rubro de interés</label>
               </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-4">
               <div class="form-floating">
-                <textarea 
-                  class="form-control" 
-                  id="mensaje"
-                  style="height: 150px"
-                  placeholder="Mensaje" 
-                  required
-                ></textarea>
-                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" id="mensaje" placeholder="Mensaje" required></textarea>
+                <label for="mensaje">Contanos qué necesitás</label>
               </div>
             </div>
             <button type="submit" class="btn-primary-custom">
-              <i class="fas fa-paper-plane me-2"></i>Solicitar Cotización
+              <i class="fas fa-paper-plane"></i>
+              Solicitar Cotización
             </button>
           </form>
         </div>
@@ -1144,187 +1910,185 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="container py-5">
+  <div class="container">
     <div class="row g-4">
-      <div class="col-lg-4">
-        <h5 class="text-white mb-4">WC INSUMOS</h5>
-        <p class="text-white-50 mb-4">
-          Más de 10 años brindando soluciones de calidad en insumos industriales y servicios especializados para los sectores más exigentes del mercado.
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">WC INSUMOS</div>
+        <p>
+          Soluciones integrales en insumos industriales y servicios especializados para los sectores más exigentes del mercado argentino.
         </p>
-        <div class="d-flex gap-3">
-          <a href="#" class="text-white-50 hover-white">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="text-white-50 hover-white">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="text-white-50 hover-white">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="#" class="text-white-50 hover-white">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/542612167948" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="col-lg-2">
-        <h5 class="text-white mb-4">Enlaces Rápidos</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <a href="#home" class="text-white-50 text-decoration-none hover-white">Inicio</a>
-          </li>
-          <li class="mb-2">
-            <a href="#productos" class="text-white-50 text-decoration-none hover-white">Productos</a>
-          </li>
-          <li class="mb-2">
-            <a href="#servicios" class="text-white-50 text-decoration-none hover-white">Servicios</a>
-          </li>
-          <li class="mb-2">
-            <a href="#marcas" class="text-white-50 text-decoration-none hover-white">Marcas</a>
-          </li>
-          <li class="mb-2">
-            <a href="#contacto" class="text-white-50 text-decoration-none hover-white">Contacto</a>
-          </li>
+      <div class="col-lg-2 col-md-6">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
-      <div class="col-lg-3">
-        <h5 class="text-white mb-4">Contacto</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2 text-white-50">
-            <i class="fas fa-map-marker-alt me-2"></i>Mendoza, Argentina
-          </li>
-          <li class="mb-2 text-white-50">
-            <i class="fas fa-phone me-2"></i>+54 2612167948
-          </li>
-          <li class="mb-2 text-white-50">
-            <i class="fas fa-envelope me-2"></i>insumos.wc@gmail.com
-          </li>
-          <li class="text-white-50">
-            <i class="fas fa-clock me-2"></i>Lun-Vie: 9:00 - 18:00
-          </li>
+      <div class="col-lg-3 col-md-6">
+        <h5>Rubros</h5>
+        <ul>
+          <li><a href="#petroleras">Minería y Petróleo</a></li>
+          <li><a href="#herramientas">Herramientas</a></li>
+          <li><a href="#quimicos">Insumos Químicos</a></li>
+          <li><a href="#aguas">Tratamiento de Aguas</a></li>
+          <li><a href="#bodegas">Bodegas</a></li>
         </ul>
       </div>
-      <div class="col-lg-3">
-        <h5 class="text-white mb-4">Newsletter</h5>
-        <p class="text-white-50 mb-3">
-          Suscríbete para recibir novedades y ofertas especiales.
-        </p>
-        <form class="d-flex gap-2">
-          <input type="email" class="form-control" placeholder="Tu email">
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
+      <div class="col-lg-3 col-md-6">
+        <h5>Contacto</h5>
+        <ul>
+          <li><i class="fas fa-map-marker-alt me-2"></i>Mendoza, Argentina</li>
+          <li><a href="tel:+542612167948"><i class="fas fa-phone me-2"></i>+54 261 216-7948</a></li>
+          <li><a href="mailto:insumos.wc@gmail.com"><i class="fas fa-envelope me-2"></i>insumos.wc@gmail.com</a></li>
+          <li><i class="fas fa-clock me-2"></i>Lun-Vie · 9:00 - 18:00</li>
+        </ul>
       </div>
     </div>
-    <hr class="my-4 border-secondary">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="text-white-50 mb-0">
-          © 2024 WC INSUMOS - Todos los derechos reservados
-        </p>
-      </div>
-      <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-        <a href="#" class="text-white-50 text-decoration-none me-3 hover-white">Términos y Condiciones</a>
-        <a href="#" class="text-white-50 text-decoration-none hover-white">Política de Privacidad</a>
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">© 2026 WC INSUMOS — Todos los derechos reservados</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+          <a href="#" class="me-3">Términos y Condiciones</a>
+          <a href="#">Política de Privacidad</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/542612167948?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20industriales" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/542612167948?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos%20industriales" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chatear por WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- Bootstrap JS -->
-<script 
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// Smooth scrolling para enlaces del menú
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  // Navbar + scroll progress + back-to-top
+  const navbar = document.getElementById('mainNavbar');
+  const progress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (y > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docH > 0 ? (y / docH) * 100 : 0;
+    progress.style.width = pct + '%';
+
+    if (y > 400) backToTop.classList.add('visible');
+    else backToTop.classList.remove('visible');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Rubro CTA: prefill contact form subject
+  document.querySelectorAll('.rubro-cta[data-rubro]').forEach(link => {
+    link.addEventListener('click', () => {
+      const rubro = link.getAttribute('data-rubro');
+      setTimeout(() => {
+        const asunto = document.getElementById('asunto');
+        const mensaje = document.getElementById('mensaje');
+        if (asunto) {
+          asunto.value = 'Consulta sobre ' + rubro;
+          asunto.dispatchEvent(new Event('input'));
+        }
+        if (mensaje && !mensaje.value) {
+          mensaje.value = 'Hola, me gustaría recibir información sobre productos y servicios de ' + rubro + '.';
+          mensaje.dispatchEvent(new Event('input'));
+          mensaje.focus();
+        }
+      }, 600);
+    });
+  });
+
+  // Smooth scrolling con offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            // Cerrar dropdown si está abierto
-            const dropdown = document.querySelector('.dropdown-menu.show');
-            if (dropdown) {
-                const bootstrapDropdown = bootstrap.Dropdown.getInstance(document.querySelector('[data-bs-toggle="dropdown"]'));
-                if (bootstrapDropdown) {
-                    bootstrapDropdown.hide();
-                }
-            }
-            
-            // Scroll suave con offset para el navbar
-            const offset = 100; // Altura del navbar
-            const elementPosition = target.offsetTop;
-            const offsetPosition = elementPosition - offset;
+      const href = this.getAttribute('href');
+      if (href === '#' || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+      // Cerrar navbar collapse en mobile
+      const collapseEl = document.querySelector('.navbar-collapse.show');
+      if (collapseEl) {
+        const bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
+        bsCollapse.hide();
+      }
+
+      const offset = 80;
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+      });
     });
-});
+  });
 
-// Efecto parallax suave en el hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < hero.offsetHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-});
-
-// Animación de las estadísticas cuando entran en viewport
-const observerOptions = {
-    threshold: 0.7,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target.querySelector('.stat-number');
-            if (statNumber && !statNumber.classList.contains('animated')) {
-                statNumber.classList.add('animated');
-                animateNumber(statNumber);
-            }
-        }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
     });
-}, observerOptions);
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('.stat-item').forEach(item => {
-    observer.observe(item);
-});
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-function animateNumber(element) {
-    const target = parseInt(element.textContent);
-    const increment = target / 50;
-    let current = 0;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
-        element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
-    }, 40);
-}
+  // Animate stat numbers
+  const animateStat = (el) => {
+    if (el.dataset.static === 'true' || el.dataset.animated === 'true') return;
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
 
-// Navbar transparency on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    }
-});
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(target * eased);
+      el.textContent = suffix === '+' ? '+' + current : current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.dataset.animated = 'true';
+    };
+    requestAnimationFrame(step);
+  };
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateStat(entry.target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 </script>
 </body>
 </html>
